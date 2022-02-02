@@ -1,10 +1,14 @@
 import React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import TodoList from "./todo-list";
+import Header from "./header";
 
 const App: React.VFC<{}> = ({}) => {
   return (
-    <div>
-      <h2>Hello, React</h2>
-    </div>
+    <ChakraProvider>
+      <Header />
+      <TodoList />
+    </ChakraProvider>
   );
 };
 
