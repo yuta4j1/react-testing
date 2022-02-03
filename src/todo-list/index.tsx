@@ -7,12 +7,14 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  useDisclosure
+  useDisclosure,
+  Link
 } from "@chakra-ui/react";
 import ATodo from "./list-item/ATodo";
 import { TodoData } from "../model";
 import SearchInput from "../search-input";
 import TodoForm from "../todo-form";
+import { useNavigate } from "react-router-dom";
 
 const TodoList: React.VFC<{
   searchText: string;
@@ -20,6 +22,7 @@ const TodoList: React.VFC<{
   todoList: TodoData[];
   modalControl: { isOpen: boolean; onOpen: () => void; onClose: () => void };
 }> = ({ searchText, setSearchText, todoList, modalControl }) => {
+  let navigate = useNavigate();
   return (
     <Box>
       <Center>
@@ -31,6 +34,13 @@ const TodoList: React.VFC<{
         >
           タスクを追加する
         </Button>
+        <Link
+          onClick={() => {
+            navigate("/form1");
+          }}
+        >
+          フォーム画面へ遷移
+        </Link>
       </Center>
       <SearchInput text={searchText} setText={setSearchText} />
       <Center>
