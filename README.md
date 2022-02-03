@@ -1,3 +1,3 @@
-# react-vite-template
+# react-testing
 
-vitejs で React のプロジェクトを作る際のテンプレート
+テストを書く練習
