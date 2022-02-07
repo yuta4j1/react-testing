@@ -189,7 +189,7 @@ export const Form2: React.VFC<{
               </CheckboxGroup>
             </Stack>
             {errors.deckType && (
-              <FormErrorMessage>{errors.deckType.message}</FormErrorMessage>
+              <FormErrorMessage>{errors.deckType}</FormErrorMessage>
             )}
             <FormHelperText>Select only if you're a fan.</FormHelperText>
           </FormControl>
