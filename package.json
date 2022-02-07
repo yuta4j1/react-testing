@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "serve": "json-server --watch ./server/local.json --p 5432",
-    "test": "jest"
+    "test": "jest",
+    "e2e": "npx playwright test e2e/mytest.spec.ts"
   },
   "keywords": [
     "vite",
@@ -27,9 +28,11 @@
     "react-hook-form": "^7.25.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.18.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",

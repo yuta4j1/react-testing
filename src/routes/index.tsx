@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodoPage from "../pages/todo";
 import Form1 from "../pages/form1";
 import Form2 from "../pages/form2";
+import Confirm from "../pages/confirm";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 
@@ -14,6 +15,7 @@ const Root = () => {
           <Route path="/" element={<TodoPage />} />
           <Route path="/form1" element={<Form1 />} />
           <Route path="/form2" element={<Form2 />} />
+          <Route path="/confirm" element={<Confirm />} />
         </Routes>
       </BrowserRouter>
     </Provider>

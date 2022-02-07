@@ -5,13 +5,15 @@ type FormdataType = {
   lastName: string;
   age: number;
   phoneNumber: string;
+  isDuelist: boolean;
 };
 
 const initialState: FormdataType = {
   firstName: "",
   lastName: "",
   age: 0,
-  phoneNumber: ""
+  phoneNumber: "",
+  isDuelist: false
 };
 
 export const formdataSlice = createSlice({
@@ -22,7 +24,17 @@ export const formdataSlice = createSlice({
       state,
       action: PayloadAction<Pick<FormdataType, "firstName" | "lastName">>
     ) => {
-      console.log("action", action);
+      return {
+        ...state,
+        ...action.payload
+      };
+    },
+    form2Update: (
+      state,
+      action: PayloadAction<
+        Pick<FormdataType, "age" | "phoneNumber" | "isDuelist">
+      >
+    ) => {
       return {
         ...state,
         ...action.payload
@@ -31,6 +43,6 @@ export const formdataSlice = createSlice({
   }
 });
 
-export const { form1Update } = formdataSlice.actions;
+export const { form1Update, form2Update } = formdataSlice.actions;
 
 export default formdataSlice.reducer;
