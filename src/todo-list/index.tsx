@@ -1,4 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { useGetTodoListQuery } from "../fetch/todoData";
+import { fetchTodoList } from "../redux/reducers/todoData";
+import { useDispatch } from "react-redux";
 import {
   Box,
   Center,
@@ -64,6 +67,19 @@ const TodoListContainer: React.VFC<{}> = ({}) => {
   const [searchText, setSearchText] = useState("");
   const [todos, setTodos] = useState<TodoData[]>([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  let dispatch = useDispatch();
+  // const { data, isError, isLoading } = useGetTodoListQuery();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const resAction = await dispatch(fetchTodoList()).unwrap();
+        console.log("success");
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     (async () => {
