@@ -86,8 +86,8 @@ const TodoListContainer: React.VFC<{}> = ({}) => {
       try {
         const res = await fetch("http://localhost:5432/todos");
         if (res) {
-          const datas: TodoData[] = await res.json();
-          setTodos(datas);
+          const data: { todos: TodoData[] } = await res.json();
+          setTodos(data.todos);
         }
       } catch (err) {
         console.error(err);

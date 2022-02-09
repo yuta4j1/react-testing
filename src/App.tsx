@@ -1,8 +1,11 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import TodoList from "./todo-list";
-import Header from "./header";
 import Routes from "./routes";
+
+if (process.env.NODE_ENV === "development") {
+  const { worker } = await import("./mocks/browser");
+  worker.start();
+}
 
 const App: React.VFC<{}> = ({}) => {
   return (
