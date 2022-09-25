@@ -33,7 +33,7 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.18.1",
+    "@playwright/test": "1.26.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
